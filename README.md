@@ -24,6 +24,7 @@
         - [b, Extends](#b-extends)
         - [c, Include](#c-include)
         - [d, Generalization (or Inheritance)](#d-generalization-or-inheritance)
+      - [2.1.4. Boundary of system (or Boundary system)](#214-boundary-of-system-or-boundary-system)
 - [Reference](#reference)
 
 # Diagrams to focus on
@@ -333,6 +334,18 @@ A diagram can be interpreted from various perspectives:
 - Extend → sometimes adds behavior.
 - Include → always reuses behavior.
 - Generalization → specialization of another use case.
+
+#### 2.1.4. Boundary of system (or Boundary system)
+
+- The system boundary represents what is inside (system functionality) vs. outside (actors).
+- It usually covers the entire system as defined in the requirements.
+- For large/complex systems, each module can be treated as its own system boundary.
+- Example: In an ERP system, modules like Personnel, Payroll, Accounting each have their own boundary.
+- The overall system boundary can also encompass all modules together to show the full system.
+
+<p align="center"> 
+    <img src="images/system-boundary.png">
+</p>
 
 # Reference
 
