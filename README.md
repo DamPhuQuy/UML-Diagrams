@@ -1,14 +1,30 @@
+# UML-Diagrams
+
+# Note for learning UML diagrams
+
 # Table of Contents
 
+- [UML-Diagrams](#uml-diagrams)
+- [Note for learning UML diagrams](#note-for-learning-uml-diagrams)
 - [Table of Contents](#table-of-contents)
 - [Diagrams to focus on](#diagrams-to-focus-on)
   - [1. Class Diagram (most important)](#1-class-diagram-most-important)
     - [Relationships](#relationships)
+    - [1.1. Relationships](#11-relationships)
     - [Class Notation](#class-notation)
-      - [Perspectives of class diagram](#perspectives-of-class-diagram)
-    - [Class Diagram Example: Order System](#class-diagram-example-order-system)
+    - [1.2. Class Notation](#12-class-notation)
+      - [1.2.1. Perspectives of class diagram](#121-perspectives-of-class-diagram)
+    - [1.3. Class Diagram Example: Order System](#13-class-diagram-example-order-system)
   - [2. Use Case Diagram](#2-use-case-diagram)
-  - [Reference](#reference)
+    - [2.1. Key elements](#21-key-elements)
+      - [2.1.1. Actor](#211-actor)
+      - [2.1.2. Use Case](#212-use-case)
+      - [2.1.3. Communication Link](#213-communication-link)
+        - [a, Association](#a-association)
+        - [b, Extends](#b-extends)
+        - [c, Include](#c-include)
+        - [d, Generalization (or Inheritance)](#d-generalization-or-inheritance)
+- [Reference](#reference)
 
 # Diagrams to focus on
 
@@ -18,7 +34,13 @@ The class diagram is a central modeling technique that runs through nearly all o
 
 This diagram describes the types of objects in the system and various kinds of static relationships which exist between them.
 
+<<<<<<< HEAD
+
 ### Relationships
+
+=======
+
+### 1.1. Relationships
 
 **There are three principal kinds of relationships which are important:**
 
@@ -186,23 +208,31 @@ Cardinality is expressed in terms of:
     <img src="images/realization.png">
 </p>
 
+<<<<<<< HEAD
+
 ### Class Notation
+
+=======
+
+### 1.2. Class Notation
+
+> > > > > > > ad35692 (update)
 
 **Visibility Notation:** indicate the access level of attributes and methods.
 
 Common visibility notations include:
 
-- "+" for public access modifier (visible to all classes)
-- "-" for private access modifier (visible only within the class)
-- "#" for protected access modifier (visible to subclasses)
-- "~" for package or default visibility access modifier (visible to classes in the same package)
+- `+` for public access modifier (visible to all classes)
+- `-` for private access modifier (visible only within the class)
+- `#` for protected access modifier (visible to subclasses)
+- `~` for package or default visibility access modifier (visible to classes in the same package)
 
 <p align="center">
     <img src="images/class-notation.png">
     <img src="images/class.png">
 </p>
 
-#### Perspectives of class diagram
+#### 1.2.1. Perspectives of class diagram
 
 A diagram can be interpreted from various perspectives:
 
@@ -214,7 +244,7 @@ A diagram can be interpreted from various perspectives:
     <img src="images/perspective-of-class-diagram.png">
 </p>
 
-### Class Diagram Example: Order System
+### 1.3. Class Diagram Example: Order System
 
 <p align="center"> 
     <img src="images/class-diagram-example-order-system.png">
@@ -222,7 +252,89 @@ A diagram can be interpreted from various perspectives:
 
 ## 2. Use Case Diagram
 
-## Reference
+- Shows how users (actors) interact with the system.
+- Focus: What the system does (functional requirements), not how it does it.
+
+<p align="center"> 
+    <img src="images/use-case-diagram-annotated.png">
+</p>
+
+### 2.1. Key elements
+
+- `Actor`: external entity (user, another system).
+- `Use Case`: functionality (action) the system provides.
+- `System boundary`: a box representing the system itself.
+- `Relationships`:
+  - `Association` (actor ↔ use case).
+  - `«include»` (one use case always uses another).
+  - `«extend»` (optional extension).
+
+#### 2.1.1. Actor
+
+- Someone interacts with use case (system function).
+- Named by noun.
+- Actor plays a role in the business
+- Similar to the concept of user, but a user can play different roles
+- For example:
+  - A prof. can be instructor and also researcher
+  - plays 2 roles with two systems
+- Actor triggers use case(s).
+- Actor has a responsibility toward the system (inputs), and Actor has expectations from the system (outputs).
+
+<p align="center"> 
+    <img src="images/actor.png">
+</p>
+
+#### 2.1.2. Use Case
+
+- System function (process - automated or manual)
+- Named by verb + Noun (or Noun Phrase).
+- i.e. Do something
+- Each Actor must be linked to a use case, while some use cases may not be linked to actors.
+
+<p align="center"> 
+    <img src="images/usecasebox.png">
+</p>
+
+#### 2.1.3. Communication Link
+
+<p align="center"> 
+    <img src="images/communication-links-use-case-diagram.png">
+</p>
+
+##### a, Association
+
+- Actor ↔ Use Case connection (solid line).
+- Shows communication between the actor and the system (sending/receiving messages).
+
+##### b, Extends
+
+- Optional/conditional behavior.
+- Child use case extends the functionality of a base use case.
+- Shown with a dashed arrow pointing to the base use case.
+- Example: Login ← «extend» Invalid Password.
+
+##### c, Include
+
+- Mandatory reuse of functionality.
+- Base use case always includes another use case as part of its flow.
+- Shown with a dashed arrow pointing to the included (child) use case.
+- Example: Checkout → «include» Payment Processing.
+
+##### d, Generalization (or Inheritance)
+
+- Parent-child relationship between use cases.
+- Child use case is a specialized/enhanced version of the parent.
+- Shown with a solid line and a hollow triangle pointing to the parent use case.
+
+**Quick memory aid:**
+
+- Association → actor communicates with use case.
+- Extend → sometimes adds behavior.
+- Include → always reuses behavior.
+- Generalization → specialization of another use case.
+
+# Reference
 
 - <a href="https://www.visual-paradigm.com/guide/">Visual Paradigm</a>
 - <a href="https://www.geeksforgeeks.org/system-design/unified-modeling-language-uml-introduction/">Geeks For Geeks</a>
