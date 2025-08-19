@@ -9,7 +9,6 @@
 - [Table of Contents](#table-of-contents)
 - [Diagrams to focus on](#diagrams-to-focus-on)
   - [1. Class Diagram (most important)](#1-class-diagram-most-important)
-    - [Relationships](#relationships)
     - [1.1. Relationships](#11-relationships)
     - [Class Notation](#class-notation)
     - [1.2. Class Notation](#12-class-notation)
@@ -34,12 +33,6 @@
 The class diagram is a central modeling technique that runs through nearly all object-oriented methods.
 
 This diagram describes the types of objects in the system and various kinds of static relationships which exist between them.
-
-<<<<<<< HEAD
-
-### Relationships
-
-=======
 
 ### 1.1. Relationships
 
