@@ -10,7 +10,6 @@
 - [Diagrams to focus on](#diagrams-to-focus-on)
   - [1. Class Diagram (most important)](#1-class-diagram-most-important)
     - [1.1. Relationships](#11-relationships)
-    - [Class Notation](#class-notation)
     - [1.2. Class Notation](#12-class-notation)
       - [1.2.1. Perspectives of class diagram](#121-perspectives-of-class-diagram)
     - [1.3. Class Diagram Example: Order System](#13-class-diagram-example-order-system)
@@ -202,15 +201,7 @@ Cardinality is expressed in terms of:
     <img src="images/realization.png">
 </p>
 
-<<<<<<< HEAD
-
-### Class Notation
-
-=======
-
 ### 1.2. Class Notation
-
-> > > > > > > ad35692 (update)
 
 **Visibility Notation:** indicate the access level of attributes and methods.
 
