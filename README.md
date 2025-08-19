@@ -26,6 +26,10 @@
     - [2.2. How to Identify Actor](#22-how-to-identify-actor)
     - [2.3. How to Identify Use Cases?](#23-how-to-identify-use-cases)
     - [2.4. Use Case Examples](#24-use-case-examples)
+    - [2.5. Use Case Diagram - Vehicle Sales Systems](#25-use-case-diagram---vehicle-sales-systems)
+  - [3. Sequence Diagram](#3-sequence-diagram)
+  - [4. Activity Diagram](#4-activity-diagram)
+  - [5. Entity Relationship Diagram (ERD)](#5-entity-relationship-diagram-erd)
 - [Reference](#reference)
 
 # Diagrams to focus on
@@ -613,6 +617,18 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
         }
     }
 ```
+
+### 2.5. Use Case Diagram - Vehicle Sales Systems
+
+<p align="center"> 
+    <img src="images/example-vehicle-sales-systems.png">
+</p>
+
+## 3. Sequence Diagram
+
+## 4. Activity Diagram
+
+## 5. Entity Relationship Diagram (ERD)
 
 # Reference
 
