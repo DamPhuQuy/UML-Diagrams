@@ -28,7 +28,28 @@
     - [2.4. Use Case Examples](#24-use-case-examples)
     - [2.5. Use Case Diagram - Vehicle Sales Systems](#25-use-case-diagram---vehicle-sales-systems)
   - [3. Sequence Diagram](#3-sequence-diagram)
+    - [3.1. Sequence Diagram Notation](#31-sequence-diagram-notation)
+      - [3.1.1. Actor](#311-actor)
+      - [3.1.2. Lifeline](#312-lifeline)
+      - [3.1.3. Activations](#313-activations)
+      - [3.1.4. Messages (communications between lifelines)](#314-messages-communications-between-lifelines)
+      - [3.1.5. Note](#315-note)
+    - [3.2. Message and Focus of Control](#32-message-and-focus-of-control)
+    - [3.3. Sequence Fragments](#33-sequence-fragments)
   - [4. Activity Diagram](#4-activity-diagram)
+    - [4.1. Activity Diagram Notation](#41-activity-diagram-notation)
+      - [4.1.1. Activity](#411-activity)
+      - [4.1.2. Action](#412-action)
+      - [4.1.3. Control Flow](#413-control-flow)
+    - [4.1.4. Object Flow](#414-object-flow)
+    - [4.1.5. Initial Node](#415-initial-node)
+    - [4.1.6. Activity Final Node](#416-activity-final-node)
+    - [4.1.7. Object Node](#417-object-node)
+    - [4.1.8. Decision Node](#418-decision-node)
+    - [4.1.9. Merge Node](#419-merge-node)
+    - [4.1.10. Fork Node](#4110-fork-node)
+    - [4.1.11. Join Node](#4111-join-node)
+    - [4.1.12. Swimlane and Partition](#4112-swimlane-and-partition)
   - [5. Entity Relationship Diagram (ERD)](#5-entity-relationship-diagram-erd)
 - [Reference](#reference)
 
@@ -626,8 +647,242 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 
 ## 3. Sequence Diagram
 
+<p align="center"> 
+    <img src="images/sqsequence-diagram-example.png">
+</p>
+
+**Purpose of Sequence Diagram**
+
+- Models high-level interactions between active objects in a system.
+- Shows interactions between object instances in a collaboration that realizes a use case or operation.
+- Can depict:
+  - Generic interactions: all possible paths.
+  - Specific interactions: a single path.
+
+**Object Dimension**
+
+- The horizontal axis shows the elements that are involved in the interaction
+- Conventionally, the objects involved in the operation are listed from left to right according to when they take part in the message sequence. However, the elements on the horizontal axis may appear in any order
+
+**Time Dimension**
+
+- The vertical axis represents time proceedings (or progressing) down the page.
+
+### 3.1. Sequence Diagram Notation
+
+#### 3.1.1. Actor
+
+- Represents a role played by an entity interacting externally with a system (subject).
+
+- Can be a human, hardware, or another system.
+
+- Not tied to a specific entity; one person can play multiple actors, and an actor can be played by multiple people.
+
+<p align="center"> 
+    <img src="images/sqactor.png">
+</p>
+
+#### 3.1.2. Lifeline
+
+- Represents an individual participant in an interaction.
+
+<p align="center"> 
+    <img src="images/sqlifeline.png">
+</p>
+
+#### 3.1.3. Activations
+
+- Thin rectangles on a lifeline showing the time period an element performs an operation.
+
+<p align="center"> 
+    <img src="images/sqactivation.png">
+</p>
+
+#### 3.1.4. Messages (communications between lifelines)
+
+- Call Message: Invokes an operation on the target lifeline.
+<p align="center"> 
+    <img src="images/sqcall-message.png">
+</p>
+
+- Return Message: Sends information back to the caller of a previous message.
+<p align="center"> 
+    <img src="images/sqreturn-message.png">
+</p>
+
+- Self Message: Invokes a message on the same lifeline.
+<p align="center"> 
+    <img src="images/sqself-message.png">
+</p>
+
+- Recursive Message: Invokes a message on the same lifeline on top of the current activation.
+<p align="center"> 
+    <img src="images/sqrecursive-message.png">
+</p>
+
+- Create Message: Instantiates a target lifeline.
+<p align="center"> 
+    <img src="images/sqcreate-message.png">
+</p>
+
+- Destroy Message: Requests destruction of a target lifeline.
+<p align="center"> 
+    <img src="images/sqdestroy-message.png">
+</p>
+
+- Duration Message: Shows the time interval between two instants of message invocation.
+<p align="center"> 
+    <img src="images/sqduration-message.png">
+</p>
+
+#### 3.1.5. Note
+
+- Allows adding comments to elements.
+- No semantic effect; purely informative for modelers.
+
+<p align="center"> 
+    <img src="images/sqnote.png">
+</p>
+
+### 3.2. Message and Focus of Control
+
+Event:
+
+- Any point in an interaction where **something occurs**.
+
+Focus of Control (Execution Occurrence):
+
+- Shown as a tall, thin rectangle on a lifeline.
+- Represents the period during which an **element performs an operation.**
+- The **top** aligns with the start of the operation, and the **bottom** aligns with the completion.
+
+Essentially, the focus of control visually shows when a **lifeline is actively doing something**, while an event marks a specific occurrence in the interaction.
+
+<p align="center"> 
+    <img src="images/sqmessage-and-focus-of-control.png">
+</p>
+
+### 3.3. Sequence Fragments
+
+| **Operator** | **Fragment Type / Meaning**                                                                                |
+| ------------ | ---------------------------------------------------------------------------------------------------------- |
+| **alt**      | Alternative: only the fragment whose condition is true will execute.                                       |
+| **opt**      | Optional: executes only if the condition is true (like an `alt` with a single branch).                     |
+| **par**      | Parallel: fragments run concurrently.                                                                      |
+| **loop**     | Loop: fragment may execute multiple times; guard indicates iteration criteria.                             |
+| **region**   | Critical region: only **one thread** can execute the fragment at a time.                                   |
+| **neg**      | Negative: shows an **invalid interaction**.                                                                |
+| **ref**      | Reference: refers to an interaction defined in another diagram; can include parameters and a return value. |
+| **sd**       | Sequence diagram frame: surrounds an **entire sequence diagram**.                                          |
+
+<p align="center"> 
+    <img src="images/fragment.png">
+</p>
+
 ## 4. Activity Diagram
 
+**What is activity diagram?**
+
+A diagram that represents the workflow or behavior of a system.
+
+- Shows activities, conditions, branching, and concurrency in a process.
+- Commonly used to:
+  - Describe business processes.
+  - Illustrate the flow of a use case or system process.
+- Notation: includes action, decision, merge, fork, join, start, end.
+- Does not necessarily show detailed computational steps like an algorithm.
+
+<p align="center"> 
+    <img src="images/basic-activity-diagram.png">
+</p>
+
+### 4.1. Activity Diagram Notation
+
+#### 4.1.1. Activity
+
+Is used to represent a set of actions
+
+<p align="center"> 
+    <img src="images/1.png">
+</p>
+
+#### 4.1.2. Action
+
+A task to be performed
+
+<p align="center"> 
+    <img src="images/2.png">
+</p> 
+#### 4.1.3. Control Flow
+
+Shows the sequence of execution
+
+<p align="center"> 
+    <img src="images/3.png">
+</p> 
+### 4.1.4. Object Flow
+
+Show the flow of an object from one activity (or action) to another activity (or action).
+
+<p align="center"> 
+    <img src="images/4.png">
+</p> 
+### 4.1.5. Initial Node
+
+Portrays the beginning of a set of actions or activities
+
+<p align="center"> 
+    <img src="images/5.png">
+</p> 
+### 4.1.6. Activity Final Node
+
+Stop all control flows and object flows in an activity (or action)
+
+<p align="center"> 
+    <img src="images/6.png">
+</p> 
+### 4.1.7. Object Node
+
+Represent an object that is connected to a set of Object Flows
+
+<p align="center"> 
+    <img src="images/7.png">
+</p> 
+### 4.1.8. Decision Node
+
+Represent a test condition to ensure that the control flow or object flow only goes down one path
+
+<p align="center"> 
+    <img src="images/8.png">
+</p> 
+### 4.1.9. Merge Node
+
+Bring back together different decision paths that were created using a decision-node.
+
+<p align="center"> 
+    <img src="images/9.png">
+</p> 
+### 4.1.10. Fork Node
+
+Split behavior into a set of parallel or concurrent flows of activities (or actions)
+
+<p align="center"> 
+    <img src="images/10.png">
+</p> 
+### 4.1.11. Join Node
+
+Bring back together a set of parallel or concurrent flows of activities (or actions).
+
+<p align="center"> 
+    <img src="images/11.png">
+</p> 
+### 4.1.12. Swimlane and Partition
+
+A way to group activities performed by the same actor on an activity diagram or to group activities in a single thread
+
+<p align="center"> 
+    <img src="images/12.png">
+</p> 
 ## 5. Entity Relationship Diagram (ERD)
 
 # Reference
