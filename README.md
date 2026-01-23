@@ -63,6 +63,10 @@
 
 # Diagrams to focus on
 
+<p align="center">
+    <img src="./images/overview.png">
+</p>
+
 ## 1. Class Diagram (most important)
 
 The class diagram is a central modeling technique that runs through nearly all object-oriented methods.
@@ -83,7 +87,7 @@ This diagram describes the types of objects in the system and various kinds of s
 - `Dependency`: important, but weaker → sometimes grouped as a subtype of “association” or omitted in beginner explanations.
 - `Realization`: only appears with interfaces → some courses don’t include it in “principal” relationships.
 
-<p align="center"> 
+<p align="center">
     <img src="images/classDiagramRelationship.png" >
 </p>
 
@@ -111,7 +115,7 @@ This diagram describes the types of objects in the system and various kinds of s
     }
 ```
 
-<p align="center"> 
+<p align="center">
     <img src="images/dependency.png">
 </p>
 
@@ -136,7 +140,7 @@ Cardinality is expressed in terms of:
 - one to many
 - many to many
 
-<p align="center"> 
+<p align="center">
     <img src="images/associations-cardinality.png">
 </p>
 
@@ -153,7 +157,7 @@ Cardinality is expressed in terms of:
     }
 ```
 
-<p align="center"> 
+<p align="center">
     <img src="images/aggregation.png">
 </p>
 
@@ -170,7 +174,7 @@ Cardinality is expressed in terms of:
     }
 ```
 
-<p align="center"> 
+<p align="center">
     <img src="images/composition.png">
 </p>
 
@@ -184,7 +188,7 @@ Cardinality is expressed in terms of:
     class Dog extends Animal { }  // Dog is an Animal
 ```
 
-<p align="center"> 
+<p align="center">
     <img src="images/nheritance-in-class-diagram.png">
 </p>
 
@@ -233,7 +237,7 @@ Cardinality is expressed in terms of:
     }
 ```
 
-<p align="center"> 
+<p align="center">
     <img src="images/realization.png">
 </p>
 
@@ -261,34 +265,47 @@ A diagram can be interpreted from various perspectives:
 - `Specification`: focus is on the interfaces of Abstract Data Type (ADTs) in the software
 - `Implementation`: describes how classes will implement their interfaces
 
-<p align="center"> 
+<p align="center">
     <img src="images/perspective-of-class-diagram.png">
 </p>
 
 ### 1.3. Class Diagram Example: Order System
 
-<p align="center"> 
+<p align="center">
     <img src="images/class-diagram-example-order-system.png">
 </p>
 
 ## 2. Use Case Diagram
 
+- Represent the functionalitites of the system through user interactions
 - Shows how users (actors) interact with the system.
 - Focus: What the system does (functional requirements), not how it does it.
 
-<p align="center"> 
+<p align="center">
     <img src="images/use-case-diagram-annotated.png">
 </p>
+
+### 2.0. Determining user's characteristics
+
+- What are their goals?
+- How will they use the software?
+- What is their level of computer literacy?
+- What are their psychological characteristics?
+- What are their habits?
 
 ### 2.1. Key elements
 
 - `Actor`: external entity (user, another system).
-- `Use Case`: functionality (action) the system provides.
+- `Use Case`: functionality (action) the system provides, summary of a use case.
 - `System boundary`: a box representing the system itself.
 - `Relationships`:
   - `Association` (actor ↔ use case).
   - `«include»` (one use case always uses another).
   - `«extend»` (optional extension).
+
+<p align="center">
+    <img src="./images/use-case-key.png">
+</p>
 
 #### 2.1.1. Actor
 
@@ -302,24 +319,36 @@ A diagram can be interpreted from various perspectives:
 - Actor triggers use case(s).
 - Actor has a responsibility toward the system (inputs), and Actor has expectations from the system (outputs).
 
-<p align="center"> 
+<p align="center">
     <img src="images/actor.png">
 </p>
 
 #### 2.1.2. Use Case
 
+- A use case needs to describe the interaction between the actor and the system, not the operations that the system should perform.
 - System function (process - automated or manual)
 - Named by verb + Noun (or Noun Phrase).
-- i.e. Do something
-- Each Actor must be linked to a use case, while some use cases may not be linked to actors.
+- E.g: Some possible use cases
+  - Make a reservation
+  - Cancel a reservation
+  - Change a reservation
 
-<p align="center"> 
+- Each Actor must be linked to a use case, while some use cases may not be linked to actors.
+- **Objectives** and **interactions**:
+  - **Objective**: what the actor wants to achieve.
+  - **Interactions**: the steps the actor takes to achieve the objective.
+
+- Example:
+  - **Objective**: define the document style
+  - **Interactions**: choose the font, choose sizes, choose the page layout, ...
+
+<p align="center">
     <img src="images/usecasebox.png">
 </p>
 
 #### 2.1.3. Communication Link
 
-<p align="center"> 
+<p align="center">
     <img src="images/communication-links-use-case-diagram.png">
 </p>
 
@@ -363,7 +392,7 @@ A diagram can be interpreted from various perspectives:
 - Example: In an ERP system, modules like Personnel, Payroll, Accounting each have their own boundary.
 - The overall system boundary can also encompass all modules together to show the full system.
 
-<p align="center"> 
+<p align="center">
     <img src="images/system-boundary.png">
 </p>
 
@@ -394,7 +423,7 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 
 **Use Case Example - Association Link**
 
-<p align="center"> 
+<p align="center">
     <img src="images/use-case-diagram-example.png">
 </p>
 
@@ -439,7 +468,7 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 
 **Use Case Example - Include Relationship**
 
-<p align="center"> 
+<p align="center">
     <img src="images/include-example.png">
 </p>
 
@@ -523,7 +552,7 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 
 **Extend - Relationship**
 
-<p align="center"> 
+<p align="center">
     <img src="images/extend-example.png">
 </p>
 
@@ -588,7 +617,7 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 
 **Use Case Example - Generalization Relationship**
 
-<p align="center"> 
+<p align="center">
     <img src="images/generalization-example.png">
 </p>
 
@@ -649,13 +678,13 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 
 ### 2.5. Use Case Diagram - Vehicle Sales Systems
 
-<p align="center"> 
+<p align="center">
     <img src="images/example-vehicle-sales-systems.png">
 </p>
 
 ## 3. Sequence Diagram
 
-<p align="center"> 
+<p align="center">
     <img src="images/sqsequence-diagram-example.png">
 </p>
 
@@ -681,12 +710,10 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 #### 3.1.1. Actor
 
 - Represents a role played by an entity interacting externally with a system (subject).
-
 - Can be a human, hardware, or another system.
-
 - Not tied to a specific entity; one person can play multiple actors, and an actor can be played by multiple people.
 
-<p align="center"> 
+<p align="center">
     <img src="images/sqactor.png">
 </p>
 
@@ -694,7 +721,7 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 
 - Represents an individual participant in an interaction.
 
-<p align="center"> 
+<p align="center">
     <img src="images/sqlifeline.png">
 </p>
 
@@ -702,44 +729,51 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 
 - Thin rectangles on a lifeline showing the time period an element performs an operation.
 
-<p align="center"> 
+<p align="center">
     <img src="images/sqactivation.png">
 </p>
 
 #### 3.1.4. Messages (communications between lifelines)
 
 - Call Message: Invokes an operation on the target lifeline.
-<p align="center"> 
+
+<p align="center">
     <img src="images/sqcall-message.png">
 </p>
 
 - Return Message: Sends information back to the caller of a previous message.
-<p align="center"> 
+
+<p align="center">
     <img src="images/sqreturn-message.png">
 </p>
 
 - Self Message: Invokes a message on the same lifeline.
-<p align="center"> 
+
+<p align="center">
     <img src="images/sqself-message.png">
 </p>
 
 - Recursive Message: Invokes a message on the same lifeline on top of the current activation.
-<p align="center"> 
+
+<p align="center">
     <img src="images/sqrecursive-message.png">
 </p>
 
 - Create Message: Instantiates a target lifeline.
-<p align="center"> 
+
+<p align="center">
     <img src="images/sqcreate-message.png">
 </p>
 
 - Destroy Message: Requests destruction of a target lifeline.
-<p align="center"> 
+
+<p align="center">
     <img src="images/sqdestroy-message.png">
 </p>
 
 - Duration Message: Shows the time interval between two instants of message invocation.
-<p align="center"> 
+
+<p align="center">
     <img src="images/sqduration-message.png">
 </p>
 
@@ -748,7 +782,7 @@ Identifying the Use Cases, and then the scenario-based elicitation process carri
 - Allows adding comments to elements.
 - No semantic effect; purely informative for modelers.
 
-<p align="center"> 
+<p align="center">
     <img src="images/sqnote.png">
 </p>
 
@@ -766,7 +800,7 @@ Focus of Control (Execution Occurrence):
 
 Essentially, the focus of control visually shows when a **lifeline is actively doing something**, while an event marks a specific occurrence in the interaction.
 
-<p align="center"> 
+<p align="center">
     <img src="images/sqmessage-and-focus-of-control.png">
 </p>
 
@@ -778,12 +812,12 @@ Essentially, the focus of control visually shows when a **lifeline is actively d
 | **opt**      | Optional: executes only if the condition is true (like an `alt` with a single branch).                     |
 | **par**      | Parallel: fragments run concurrently.                                                                      |
 | **loop**     | Loop: fragment may execute multiple times; guard indicates iteration criteria.                             |
-| **region**   | Critical region: only **one thread** can execute the fragment at a time.                                   |
-| **neg**      | Negative: shows an **invalid interaction**.                                                                |
+| **region**   | Critical region: only**one thread** can execute the fragment at a time.                                    |
+| **neg**      | Negative: shows an**invalid interaction**.                                                                 |
 | **ref**      | Reference: refers to an interaction defined in another diagram; can include parameters and a return value. |
-| **sd**       | Sequence diagram frame: surrounds an **entire sequence diagram**.                                          |
+| **sd**       | Sequence diagram frame: surrounds an**entire sequence diagram**.                                           |
 
-<p align="center"> 
+<p align="center">
     <img src="images/fragment.png">
 </p>
 
@@ -800,7 +834,7 @@ A diagram that represents the workflow or behavior of a system.
 - Notation: includes action, decision, merge, fork, join, start, end.
 - Does not necessarily show detailed computational steps like an algorithm.
 
-<p align="center"> 
+<p align="center">
     <img src="images/basic-activity-diagram.png">
 </p>
 
@@ -810,7 +844,7 @@ A diagram that represents the workflow or behavior of a system.
 
 Is used to represent a set of actions
 
-<p align="center"> 
+<p align="center">
     <img src="images/1.png">
 </p>
 
@@ -818,7 +852,7 @@ Is used to represent a set of actions
 
 A task to be performed
 
-<p align="center"> 
+<p align="center">
     <img src="images/2.png">
 </p>
 
@@ -826,7 +860,7 @@ A task to be performed
 
 Shows the sequence of execution
 
-<p align="center"> 
+<p align="center">
     <img src="images/3.png">
 </p>
 
@@ -834,7 +868,7 @@ Shows the sequence of execution
 
 Show the flow of an object from one activity (or action) to another activity (or action).
 
-<p align="center"> 
+<p align="center">
     <img src="images/4.png">
 </p>
 
@@ -842,7 +876,7 @@ Show the flow of an object from one activity (or action) to another activity (or
 
 Portrays the beginning of a set of actions or activities
 
-<p align="center"> 
+<p align="center">
     <img src="images/5.png">
 </p>
 
@@ -850,7 +884,7 @@ Portrays the beginning of a set of actions or activities
 
 Stop all control flows and object flows in an activity (or action)
 
-<p align="center"> 
+<p align="center">
     <img src="images/6.png">
 </p>
 
@@ -858,7 +892,7 @@ Stop all control flows and object flows in an activity (or action)
 
 Represent an object that is connected to a set of Object Flows
 
-<p align="center"> 
+<p align="center">
     <img src="images/7.png">
 </p>
 
@@ -866,7 +900,7 @@ Represent an object that is connected to a set of Object Flows
 
 Represent a test condition to ensure that the control flow or object flow only goes down one path
 
-<p align="center"> 
+<p align="center">
     <img src="images/8.png">
 </p>
 
@@ -874,7 +908,7 @@ Represent a test condition to ensure that the control flow or object flow only g
 
 Bring back together different decision paths that were created using a decision-node.
 
-<p align="center"> 
+<p align="center">
     <img src="images/9.png">
 </p>
 
@@ -882,7 +916,7 @@ Bring back together different decision paths that were created using a decision-
 
 Split behavior into a set of parallel or concurrent flows of activities (or actions)
 
-<p align="center"> 
+<p align="center">
     <img src="images/10.png">
 </p>
 
@@ -890,7 +924,7 @@ Split behavior into a set of parallel or concurrent flows of activities (or acti
 
 Bring back together a set of parallel or concurrent flows of activities (or actions).
 
-<p align="center"> 
+<p align="center">
     <img src="images/11.png">
 </p>
 
@@ -898,7 +932,7 @@ Bring back together a set of parallel or concurrent flows of activities (or acti
 
 A way to group activities performed by the same actor on an activity diagram or to group activities in a single thread
 
-<p align="center"> 
+<p align="center">
     <img src="images/12.png">
 </p>
 
@@ -1044,7 +1078,17 @@ Physical ERD represents the actual design blueprint of a relational database.
   - After normalization, split into Product and Manufacturer tables.
   - Use a foreign key to link Product → Manufacturer.
 
+## PlantUML
+
+PlantUML is a free and open-source tool for creating UML diagrams.
+
+- `<a href="https://plantuml.com/">`PlantUML`</a>`
+
 # Reference
 
-- <a href="https://www.visual-paradigm.com/guide/">Visual Paradigm</a>
-- <a href="https://www.geeksforgeeks.org/system-design/unified-modeling-language-uml-introduction/">Geeks For Geeks</a>
+- `<a href="https://www.visual-paradigm.com/guide/">`Visual Paradigm`</a>`
+- `<a href="https://www.geeksforgeeks.org/system-design/unified-modeling-language-uml-introduction/">`Geeks For Geeks`</a>`
+
+```
+
+```
